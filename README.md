@@ -1,7 +1,7 @@
 # MCQ_Test_Portal
 Django framework
 
-frontend - html,css, bootsrap
+frontend - html,css, bootstrap
 
 backend - python
 
