@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 31, 2021, 3:38:08 PM
+    Author     : Navin Ranjan
+*/
+
+    
+/* Home page start*/
+
+ /* navbar start*/
+.navbar{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .9rem;
+    letter-spacing: .09rem;
+    background-color:#27354e;
+}
+.navbar-nav li{
+    padding-right: .7rem;
+}
+
+
+.nav-cl{
+    color: azure;
+    
+}
+/* navbar End*/
+
+/*image section start*/
+
+/* image section  End*/
+
+/* footer start*/
+.footer1{
+    background:#273650;
+}
+/* footer end*/
