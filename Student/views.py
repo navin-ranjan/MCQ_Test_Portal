@@ -13,16 +13,13 @@ def student_login(request):
 
         count = Student.objects.filter(username=username,password=upass).count()
         if count >0:
-            return HttpResponse("login successfully!")
+            return redirect('studentdash')
         else:
             messages.warning(request,'Username Or Password not correct ')
 
     return render(request,'Student/studentlog.html')
 
 def student_signup(request):
-    return render(request,'Student/studentsignup.html')
-
-def sturdentregister(request):
     if request.POST:
         username=request.POST['username']          
         uname=request.POST['uname']
@@ -35,5 +32,21 @@ def sturdentregister(request):
             obj=Student(username=username,name=uname,email=uemail,mobile=umobile,password=upass)
             obj.save()
             messages.success(request,'User has been created Successfully')
-    return redirect('studentsignup')
+    return render(request,'Student/studentsignup.html')
+
+
+
+def sturdent_dash(request):
+    return render(request,'Student/studentdash.html')
+
+def sturdent_result(request):
+    return render(request,'Student/studentresult.html')
+
+def sturdent_profile(request):
+    return render(request,'Student/studentprofile.html')
+
+
+
+#def sturdentregister(request):
+    #return redirect('studentsignup')
         

@@ -1,0 +1,113 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%  static 'MCQ_Test/css/style.css' %}">
+    
+    
+    <title>Admin</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm p-2 sticky-top navbar-dark ">
+        <div class="container">
+            <a class="navbar-brand " href="">
+                <img src="{%  static 'MCQ_Test/images/logo.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+              </a>
+            <div>
+                <h6 class="text-success">Admin</h6>
+                <hr class="bg-success m-0">
+            </div> 
+            <button type="button" class="navbar-toggler " data-toggle="collapse" data-target="#mymenu">
+                <span class="navbar-toggler-icon "></span>
+                
+            </button>
+            <div class="collapse navbar-collapse  text-center" id="mymenu">
+            <ul class=" navbar-nav ml-auto" >
+                <li class="nav-item  ">
+                    <a class="nav-link " href="{% url 'admindash'%}">Dashboard</a>
+                </li>
+                <li class="nav-item  ">
+                    <a class="nav-link " href="{% url 'adminstudent'%}">Student</a>
+                </li>
+                <li class="nav-item  ">
+                    <a class="nav-link " href="{% url 'adminteacher'%}">Teacher</a>
+                </li>
+                <li class="nav-item  ">
+                    <a class="nav-link " href="{% url 'adminsubject'%}">Subject</a>
+                </li>
+                <li class="nav-item  ">
+                    <a class="nav-link " href="{% url 'admincontact'%}">Contact view</a>
+                </li>
+                <li class="nav-item p-1 ">
+                    <a class=" btn btn-danger btn-sm " href="{% url 'Exampath'%}">Logout</a>
+                </li>
+                
+            </ul>
+            </div>
+        </div>     
+    </nav>
+    
+
+    
+    {% block content %}{% endblock content %}
+    <!-- Footer -->
+<footer class="text-white font-small unique-color-dark footer-end p-1" style="background-color: #273650;">
+    <div class="container text-center text-md-left mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase font-weight-bold">MCQ Test</h6>
+          <hr class="bg-info" >
+          <p>A web application for online MCQ Quiz Test in real time.<br> The entire MCQ Test process is simplified and Test are taken from anywhere</p>  
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase font-weight-bold">College Link</h6>
+          <hr class="bg-info">
+          <p>
+            <a href="#!">MANIT</a>
+          </p>
+          <p>
+            <a href="#!">Facebook Page</a>
+          </p>
+          <p>
+            <a href="#!">Linkedin</a>
+          </p>
+  
+        </div>
+    
+        
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+  
+          <h6 class="text-uppercase font-weight-bold">Contact</h6>
+          <hr class="bg-info">
+          <p> Address : Bhopal, Madhaya Pradesh</p>
+          <p> Mobile No.1 : +91 7979819668</p>
+  
+        </div>
+        
+  
+      </div>
+  
+    </div>
+    
+    <hr class="bg-secondary">
+    <div class="text-center">
+        <p>Copyright &copy;2021 | Design by Navin And Ankit |</p>
+     </div>
+  </footer>
+  <!-- Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'MCQ_Test/adminbase.html' %}
+{% load static %}
+
+{% block content %}
+<div class="p-5">
+<div class="container p-5" style=" background-color:#e6f2ff">
+    <div class="row">
+        <div class="col-md-3 py-2">
+            <a href="{% url 'adminstudent'%}" class="card text-white text-center bg-success ">
+                <div class="card-body">
+                    <h5 >Students List</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 py-2">
+            <a href="{% url 'adminteacher'%}" class="card text-white text-center bg-info ">
+                <div class="card-body">
+                    <h5 >Teachers List/add</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 py-2">
+            <a href="{% url 'adminsubject'%}" class="card text-white text-center bg-danger ">
+                <div class="card-body">
+                    <h5 >Subjects view/add</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 py-2">
+            <a href="{% url 'admincontact'%}" class="card text-white text-center bg-warning " >
+                <div class="card-body">
+                    <h5 >Contacts view </h5>
+                </div>
+            </a>
+        </div>
+    </div>    
+ </div> 
+ </div>      
+
+
+{% endblock content %}
+
+

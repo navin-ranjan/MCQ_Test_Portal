@@ -23,7 +23,7 @@
                           {{ message }}
                         </div>
                       {% endfor %}
-                           <form action="{% url 'studentregister'%}" method="POST">
+                           <form action="{% url 'studentsignup'%}" method="POST">
                             {% csrf_token %}
                             <div class="form-group">
                               <label >Username</label>

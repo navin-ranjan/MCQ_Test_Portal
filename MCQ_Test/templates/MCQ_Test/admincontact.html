@@ -1,0 +1,46 @@
+{% extends 'MCQ_Test/adminbase.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="py-3">
+
+
+<div class=" container-fluid">
+<div class="text-center text-warning">
+<h5>CONTACT VIEW</h5>
+<hr class="bg-info">
+</div>
+{% if cont %}
+<table class="table">
+  <thead class="bg-warning text-white">
+    <tr>
+      <th scope="col">S/N</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Massage</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for con in cont %}
+    <tr>
+      <th scope="row">{{con.id}}</th>
+      <td>{{con.name}}</td>
+      <td>{{con.email}}</td>
+      <td>{{con.phone_no}}</td>
+      <td>{{con.massege}}</td>
+      <td>
+          <a href="#" class='btn btn-danger btn-sm'>Delete</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+</div>
+</div> 
+
+
+{% endblock content %}
