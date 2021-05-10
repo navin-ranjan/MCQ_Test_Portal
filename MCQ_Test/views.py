@@ -41,7 +41,39 @@ def admin_student(request):
     st=Student.objects.all()
     return render(request,'MCQ_Test/adminstudent.html',{'stu':st})
 
+def admin_delete_student(request,id):
+    if request.method=='POST':
+        pi=Student.objects.get(pk=id)
+        pi.delete()
+    st=Student.objects.all()
+    return render(request,'MCQ_Test/adminstudent.html',{'stu':st})
+
+def admin_edit_student(request,id):
+    stu=Student.objects.get(pk=id)
+    if request.method=='POST':
+        username=request.POST['username']          
+        uname=request.POST['uname']
+        uemail=request.POST['uemail']
+        umobile=request.POST['umobile']
+        upass=request.POST['upass']
+        stu.username=username
+        stu.name=uname
+        stu.email=uemail
+        stu.mobile=umobile
+        stu.password=upass
+        stu.save()
+        return redirect('adminstudent')
+    return render(request,'MCQ_Test/adminstudentedit.html',{'stu':stu})
+
+
 def admin_teacher(request):
+    te=Teacher.objects.all()
+    return render(request,'MCQ_Test/adminteacher.html',{'tech':te})
+
+def admin_delete_teacher(request,id):
+    if request.method=='POST':
+        pi=Teacher.objects.get(pk=id)
+        pi.delete()
     te=Teacher.objects.all()
     return render(request,'MCQ_Test/adminteacher.html',{'tech':te})
 
@@ -49,5 +81,12 @@ def admin_subject(request):
     return render(request,'MCQ_Test/adminsubject.html')
 
 def admin_contact(request):
+    con=Contacts.objects.all()
+    return render(request,'MCQ_Test/admincontact.html',{'cont':con})
+
+def admin_delete_contact(request,id):
+    if request.method=='POST':
+        pi=Contacts.objects.get(pk=id)
+        pi.delete()
     con=Contacts.objects.all()
     return render(request,'MCQ_Test/admincontact.html',{'cont':con})

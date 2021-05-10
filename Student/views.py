@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from . models import *
 #from .forms import StudentRegistration
+from MCQ_Test.models import *
 from django.contrib import messages
 from django.views import View
 from django.http import HttpResponse
@@ -35,14 +36,14 @@ def student_signup(request):
     return render(request,'Student/studentsignup.html')
 
 
+def student_dash(request):
+    sub= Subject.objects.all()
+    return render(request,'Student/studentdash.html',{'sub':sub})
 
-def sturdent_dash(request):
-    return render(request,'Student/studentdash.html')
-
-def sturdent_result(request):
+def student_result(request):
     return render(request,'Student/studentresult.html')
 
-def sturdent_profile(request):
+def student_profile(request):
     return render(request,'Student/studentprofile.html')
 
 
