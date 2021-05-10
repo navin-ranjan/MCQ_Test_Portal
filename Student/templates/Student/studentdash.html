@@ -12,7 +12,7 @@
         {% if sub %}
             {%for s in sub%}
         <div class="col-md-3 py-2">
-            <a href="" class="card text-white text-center bg-info ">
+            <a href="{% url 'examinstruction' %}" class="card text-white text-center bg-info ">
                 <div class="card-body">
                     <h5 >{{s.subject_name}}</h5>
                 </div>

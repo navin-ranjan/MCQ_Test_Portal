@@ -1,0 +1,51 @@
+{% extends 'Student/studentbase.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container py-5">
+        <div class="row justify-content-center align-items-center ">
+      
+          <div class="col-md-7 " style="background-color: rgb(227, 239, 250);">
+                   
+              <div class="col-md-12 py-3">
+                  <div class="text-center text-info" >
+                      <h4>Instructions for Test</h4>
+                      
+                  </div>
+                      <hr class="bg-info">
+                        <div class="card">
+                            <div class="p-4 list-group-item-primary"> 
+                                <h6>Test Details :</h6>
+                                <ul class="">
+                                    <li >Subject Name : Java</li>
+                                    <li >Total Question : 20</li>
+                                    <li >Total Marks : 100</li>
+                                </ul>
+
+                                 <h6>Test Rules :</h6>
+                                <ul >
+                                    <li >All questions are multiple choice question.</li>
+                                    <li >Only one choice is correct.</li>
+                                    <li >Every question carry different marks</li>
+                                    <li >You will be views your marks immediately when you submit the answer.</li>
+                                </ul>
+                            </div>    
+                        </div>
+
+                            
+                        
+                        <div class="mt-3 text-center">
+                            <a class="btn btn-info" href="{% url 'examtake' %}">Test Start</a>
+                         </div>       
+                          
+                      </div>
+                      
+                      
+                   </div>  
+            </div>
+        </div>
+        
+      </div>
+
+{% endblock content %}

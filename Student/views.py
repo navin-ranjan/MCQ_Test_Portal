@@ -47,6 +47,16 @@ def student_profile(request):
     return render(request,'Student/studentprofile.html')
 
 
+def exam_instruction(request):
+    return render(request,'Student/examinstruction.html')
+
+def exam_take(request):
+    return render(request,'Student/examtake.html')
+
+def exam_result(request):
+    return render(request,'Student/examresult.html')
+
+
 
 #def sturdentregister(request):
     #return redirect('studentsignup')

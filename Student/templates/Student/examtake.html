@@ -1,0 +1,71 @@
+{% extends 'Student/studentbase.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container py-4">
+        <div class="row justify-content-center align-items-center ">
+      
+          <div class="col-md-12 " style="background-color: rgb(227, 239, 250);">
+                   
+              <div class="col-md-12 py-4">
+                  <div class="text-center text-info" >
+                      <h4> Question Paper</h4>
+                  </div>
+                  <hr class="bg-info">
+
+                  <div class="px-5 py-3" style="border: 0.6px solid DodgerBlue;">
+
+                            <div class="text-danger ml-auto" >
+                                <h6>Q1. What is java </h6>
+                                
+                            </div>
+
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Option1
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Option2
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+                                <label class="form-check-label" for="exampleRadios3">
+                                    option3
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Option4
+                                </label>
+                            </div>
+                            
+                            <hr> 
+                            
+                            
+                             
+
+                     </div>
+
+                     <div class="mt-3 text-center">
+                            <a class="btn btn-info" href="{% url 'examresult' %}">Submit Test</a>
+                         </div>        
+                        
+                      
+                      
+                   </div>  
+            </div>
+        </div>
+        
+      </div>
+
+
+{% endblock content %}
