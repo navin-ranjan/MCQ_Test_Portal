@@ -18,9 +18,9 @@
                             <div class="p-4 list-group-item-primary"> 
                                 <h6>Test Details :</h6>
                                 <ul class="">
-                                    <li >Subject Name : Java</li>
-                                    <li >Total Question : 20</li>
-                                    <li >Total Marks : 100</li>
+                                    <li >Subject Name : {{ftt}}</li>
+                                    <li >Total Question : {{ft}}</li>
+                                    <li >Total Marks : {{co}}</li>
                                 </ul>
 
                                  <h6>Test Rules :</h6>
@@ -36,7 +36,7 @@
                             
                         
                         <div class="mt-3 text-center">
-                            <a class="btn btn-info" href="{% url 'examtake' %}">Test Start</a>
+                            <a class="btn btn-info" href="{% url 'examtake' ftt %}">Test Start</a>
                          </div>       
                           
                       </div>

@@ -16,40 +16,41 @@
                   <hr class="bg-info">
 
                   <div class="px-5 py-3" style="border: 0.6px solid DodgerBlue;">
+                        {% if ftt %}
+                        {% for q in ftt %}
 
                             <div class="text-danger ml-auto" >
-                                <h6>Q1. What is java </h6>
+                                <h6>Q. {{ q.question}} </h6>
                                 
                             </div>
-
-
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
                                 <label class="form-check-label" for="exampleRadios1">
-                                    Option1
+                                   {{q.option1}}
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                                 <label class="form-check-label" for="exampleRadios2">
-                                    Option2
+                                    {{q.option2}}
                                 </label>
                             </div>
                             <div class="form-check ">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
                                 <label class="form-check-label" for="exampleRadios3">
-                                    option3
+                                    {{q.option3}}
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                                 <label class="form-check-label" for="exampleRadios2">
-                                    Option4
+                                    {{q.option4}}
                                 </label>
                             </div>
                             
-                            <hr> 
-                            
+                            <hr>
+                        {% endfor %} 
+                        {% endif %}    
                             
                              
 

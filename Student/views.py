@@ -47,11 +47,18 @@ def student_profile(request):
     return render(request,'Student/studentprofile.html')
 
 
-def exam_instruction(request):
-    return render(request,'Student/examinstruction.html')
+def exam_instruction(request,subject):
+    fm=subject
+    qdata=Question.objects.filter(subject=fm)
+    fz=len(qdata)
+    count=0
+    for i in qdata:
+        count+=i.marks
+    return render(request,'Student/examinstruction.html',{'ftt':fm,'ft':fz,'co':count})
 
-def exam_take(request):
-    return render(request,'Student/examtake.html')
+def exam_take(request,subject):
+    fm=Question.objects.filter(subject=subject)
+    return render(request,'Student/examtake.html',{'ftt':fm})
 
 def exam_result(request):
     return render(request,'Student/examresult.html')
