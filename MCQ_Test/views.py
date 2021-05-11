@@ -70,12 +70,45 @@ def admin_teacher(request):
     te=Teacher.objects.all()
     return render(request,'MCQ_Test/adminteacher.html',{'tech':te})
 
+def admin_edit_teacher(request,id):
+    stu=Teacher.objects.get(pk=id)
+    if request.method=='POST':
+        username=request.POST['username']          
+        uname=request.POST['uname']
+        uemail=request.POST['uemail']
+        umobile=request.POST['umobile']
+        upass=request.POST['upass']
+        stu.username=username
+        stu.name=uname
+        stu.email=uemail
+        stu.mobile=umobile
+        stu.password=upass
+        stu.save()
+        return redirect('adminteacher')
+    return render(request,'MCQ_Test/adminteacheredit.html',{'stu':stu})    
+
 def admin_delete_teacher(request,id):
     if request.method=='POST':
         pi=Teacher.objects.get(pk=id)
         pi.delete()
     te=Teacher.objects.all()
     return render(request,'MCQ_Test/adminteacher.html',{'tech':te})
+
+def admin_add_teacher(request):
+    if request.POST:
+        username=request.POST['username']          
+        uname=request.POST['uname']
+        uemail=request.POST['uemail']
+        usubject=request.POST['usubject']
+        umobile=request.POST['umobile']
+        upass=request.POST['upass']
+        if Teacher.objects.filter(subject=usubject).exists():
+            obj=Teacher(username=username,name=uname,email=uemail,=usubject,mobile=umobile,password=upass)
+            obj.save()
+            messages.success(request,'User has been created Successfully')
+        else :
+            messages.success(request,'Subject name not match ')
+    return render(request,'MCQ_Test/adminteacheradd.html')
 
 def admin_subject(request):
     return render(request,'MCQ_Test/adminsubject.html')
