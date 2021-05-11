@@ -103,7 +103,7 @@ def admin_add_teacher(request):
         umobile=request.POST['umobile']
         upass=request.POST['upass']
         if Teacher.objects.filter(subject=usubject).exists():
-            obj=Teacher(username=username,name=uname,email=uemail,=usubject,mobile=umobile,password=upass)
+            obj=Teacher(username=username,name=uname,email=uemail,subject=usubject,mobile=umobile,password=upass)
             obj.save()
             messages.success(request,'User has been created Successfully')
         else :

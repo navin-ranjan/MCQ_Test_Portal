@@ -16,5 +16,7 @@ urlpatterns = [
     path('delete_teacher/<int:id>/',views.admin_delete_teacher,name="deleteteacher"),
     path('delete_contact/<int:id>/',views.admin_delete_contact,name="deletecontact"),
     path('edit_student/<int:id>/',views.admin_edit_student,name="editstudent"),
+    path('edit_teacher/<int:id>/',views.admin_edit_teacher,name="editteacher"),
+    path('add_teacher/',views.admin_add_teacher,name="addteacher"),
 
 ]

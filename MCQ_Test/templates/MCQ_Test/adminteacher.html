@@ -36,7 +36,7 @@
       <td>{{te.email}}</td>
       <td>{{te.password}}</td>
       <td>
-          <a href="#" class='btn btn-warning btn-sm'>Edit</a>
+          <a href="{% url 'editteacher' te.id %}" class='btn btn-warning btn-sm'>Edit</a>
           <form action="{% url 'deleteteacher' te.id %}" method="POST" class='d-inline'>
             {% csrf_token %}
             <input type="submit" class="btn btn-danger btn-sm" value="Delete">
@@ -48,6 +48,10 @@
   </tbody>
 {% endif %}
 </table>
+<div class="text-center">
+    <a href="{% url 'addteacher' %}" class="btn btn-info">Add New Teacher</a>
+</div>
+
 </div>
 </div> 
 
