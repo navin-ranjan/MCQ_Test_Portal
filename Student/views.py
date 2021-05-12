@@ -61,7 +61,9 @@ def exam_take(request,subject):
     return render(request,'Student/examtake.html',{'ftt':fm})
 
 def exam_result(request):
-    return render(request,'Student/examresult.html')
+    if request.POST:
+        fr=request.POST['mark']
+    return render(request,'Student/examresult.html',{'frt':fr})
 
 
 
