@@ -62,8 +62,10 @@ def exam_take(request,subject):
 
 def exam_result(request):
     if request.POST:
-        fr=request.POST['mark']
-    return render(request,'Student/examresult.html',{'frt':fr})
+        ca=request.POST['cans']
+        wa=request.POST['wans']
+        sco=request.POST['score']
+    return render(request,'Student/examresult.html',{'cas':ca,'was':wa,'sc':sco})
 
 
 
