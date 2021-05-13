@@ -12,6 +12,8 @@ and open the template in the editor.
 /* Home page start*/
 
  /* navbar start*/
+ 
+
 .navbar{
     text-transform: uppercase;
     font-weight: 600;
@@ -39,3 +41,46 @@ and open the template in the editor.
     background:#273650;
 }
 /* footer end*/
+.hero-image{
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    background-image: url("/static/images/logo.jpeg") ;
+    background-size: cover;
+}
+.context-area{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.context-area h1{
+    font-size: 50px;
+    color:white;
+    text-shadow:0 0 10px black;
+    letter-spacing: 0.2em;
+}
+.des{
+    margin: 20px;
+    display: block;
+    font-size: 18px;
+    color: beige;
+    text-shadow:0 0 10px black;
+}
+.btn{
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-decoration: none;
+    background: red;
+    border-radius: 8px;
+    transform: 0.35 all;
+    
+}
+.btn:hover{
+    opacity: 0.8;
+}
+/* image section  End*/
