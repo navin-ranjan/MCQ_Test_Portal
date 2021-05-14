@@ -1,0 +1,52 @@
+{% extends 'MCQ_Test/adminbase.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container py-5">
+        <div class="row justify-content-center align-items-center ">
+      
+          <div class="col-md-6 " style="background-color: rgb(227, 239, 250);">
+                   
+              <div class="col-md-12 py-4">
+                  <div class="text-center text-info" >
+                      <h4>Add New Subject</h4>
+                      
+                  </div>
+                      <hr class="bg-info">
+                      {% for message in messages %}
+                        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          {{ message }}
+                        </div>
+                      {% endfor %}
+                           <form action="{% url 'addsubject'%}" method="POST">    
+                            {% csrf_token %}
+                            <div class="form-group">
+                              <label >Subject Name</label>
+                              <input type="Username" class="form-control" name="subject" Required placeholder="Enter the new subject"  >
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Add New Subject </button>
+                             
+                             
+                          </form>
+
+                          <div class='col-sm-4'>
+            
+                          </div>   
+                          
+                      </div>
+                      
+                      
+                   </div>  
+            </div>
+        </div>
+        
+      </div>
+
+
+
+{% endblock content %}

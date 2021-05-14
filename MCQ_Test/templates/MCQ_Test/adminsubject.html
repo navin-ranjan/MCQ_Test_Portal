@@ -3,9 +3,34 @@
 
 {% block content %}
 
+<div class="p-5">
+<div class="container p-4" style=" background-color:#e6f2ff">
+    <div class="row">
+        <div class="col-md-12 text-center text-info">
+            <h4>SUBJECTS</h4>
+            <hr>
+        </div>
+        {% if sub %}
+            {%for s in sub%}
+        <div class="col-md-3 py-2">
+            <div href="" class="card text-white text-center bg-info ">
+                <div class="card-body">
+                    <h5 >{{s.subject}}</h5>
+                </div>
+            </div>
+        </div>
+                {%endfor%}
+        {% endif%}
+    
 
-
-<h2> subject list</h2>
+        
+    </div>  
+    <hr>
+    <div class="text-center">
+    <a href="{% url 'addsubject' %}" class="btn btn-success">Add Subject</a>
+    </div>  
+ </div> 
+ </div>       
 
 
 {% endblock content %}

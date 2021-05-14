@@ -2,9 +2,9 @@ from django.db import models
 from Student.models import Student
 # Create your models here.
 class Subject(models.Model):
-   subject_name = models.CharField(max_length=50,primary_key=True)
+   subject = models.CharField(max_length=50)
    def __str__(self):
-       return self.subject_name
+       return self.subject
    
 
 class Question(models.Model):

@@ -1,0 +1,21 @@
+
+.navbar{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .9rem;
+    letter-spacing: .09rem;
+    background-color:#27354e;
+}
+.navbar-nav li{
+    padding-right: .7rem;
+}
+
+
+.nav-cl{
+    color: azure;
+    
+}
+
+.footer1{
+    background:#273650;
+}

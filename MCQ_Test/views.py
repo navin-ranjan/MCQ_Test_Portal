@@ -85,7 +85,7 @@ def admin_edit_teacher(request,id):
         stu.password=upass
         stu.save()
         return redirect('adminteacher')
-    return render(request,'MCQ_Test/adminteacheredit.html',{'stu':stu})    
+    return render(request,'MCQ_Test/adminteacheredit.html',{'stu':stu})
 
 def admin_delete_teacher(request,id):
     if request.method=='POST':
@@ -95,6 +95,7 @@ def admin_delete_teacher(request,id):
     return render(request,'MCQ_Test/adminteacher.html',{'tech':te})
 
 def admin_add_teacher(request):
+    se=Subject.objects.all()
     if request.POST:
         username=request.POST['username']          
         uname=request.POST['uname']
@@ -102,16 +103,30 @@ def admin_add_teacher(request):
         usubject=request.POST['usubject']
         umobile=request.POST['umobile']
         upass=request.POST['upass']
-        if Teacher.objects.filter(subject=usubject).exists():
-            obj=Teacher(username=username,name=uname,email=uemail,subject=usubject,mobile=umobile,password=upass)
-            obj.save()
+        subject=Subject.objects.get(id=usubject)
+        if Teacher.objects.filter(username=username).exists():
+            messages.warning(request,'Username is already exists')
+        else:    
+            Teacher.objects.create(username=username,name=uname,email=uemail,subject=subject,mobile=umobile,password=upass)
             messages.success(request,'User has been created Successfully')
-        else :
-            messages.success(request,'Subject name not match ')
-    return render(request,'MCQ_Test/adminteacheradd.html')
+        
+    return render(request,'MCQ_Test/adminteacheradd.html',{'sub':se})
 
 def admin_subject(request):
-    return render(request,'MCQ_Test/adminsubject.html')
+    sub=Subject.objects.all()
+    return render(request,'MCQ_Test/adminsubject.html',{'sub':sub})
+
+def admin_add_subject(request):
+    if request.POST:
+        sub=request.POST['subject'] 
+        if Subject.objects.filter(subject=sub).exists():
+            messages.warning(request,'Subject is already exists')
+        else:
+            obj=Subject(subject=sub)
+            obj.save()
+            messages.success(request,'Subject add successful')
+
+    return render(request,'MCQ_Test/adminsubjectadd.html')
 
 def admin_contact(request):
     con=Contacts.objects.all()
