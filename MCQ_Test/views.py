@@ -108,7 +108,7 @@ def admin_add_teacher(request):
             messages.warning(request,'Username is already exists')
         else:    
             Teacher.objects.create(username=username,name=uname,email=uemail,subject=subject,mobile=umobile,password=upass)
-            messages.success(request,'User has been created Successfully')
+            messages.success(request,'New Teacher has been Added Successfully')
         
     return render(request,'MCQ_Test/adminteacheradd.html',{'sub':se})
 

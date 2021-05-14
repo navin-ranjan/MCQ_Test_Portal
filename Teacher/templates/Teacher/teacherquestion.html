@@ -1,0 +1,50 @@
+{% extends 'Teacher/teacherbase.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="py-3">
+
+
+<div class=" container-fluid">
+<div class="text-center text-info">
+<h5>Questions</h5>
+<hr class="bg-info">
+</div>
+<table class="table text-center">
+  <thead class="bg-info text-white">
+    <tr>
+      <th scope="col">-></th>
+      <th scope="col">Questions</th>
+      <th scope="col">Marks</th>
+      <th scope="col">Answer</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for s in  ques %}
+    <tr >
+      <td scope="row">Q</td>
+      <td>{{s.question}}</td>
+      <td>{{s.marks}}</td>
+      <td>{{s.answer}}</td>
+      <td>
+          <a href="" class='btn btn-warning btn-sm'>Edit</a>
+          <form action="" method="POST" class='d-inline'>
+            {% csrf_token %}
+            <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+          </form>
+      </td>
+    </tr>
+  {% endfor %}
+    
+  </tbody>
+</table>
+</div>
+</div> 
+
+
+
+{% endblock content %}
+
+

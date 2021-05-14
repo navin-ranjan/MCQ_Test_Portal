@@ -1,10 +1,37 @@
-{% extends 'Student/studentbase.html' %}
+{% extends 'Teacher/teacherbase.html' %}
 {% load static %}
 
 {% block content %}
+<div class="p-5">
+<div class="container p-5" style=" background-color:#e6f2ff">
+    <div class="row">
+        <div class="col-md-4 py-2">
+            <a href="{% url 'teacherquestion'%}" class="card text-white text-center bg-success ">
+                <div class="card-body">
+                    <h5>Qusetions</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 py-2">
+            <a href="{% url 'teacheraddquestion'%}" class="card text-white text-center bg-danger ">
+                <div class="card-body">
+                    <h5>Add New Question</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 py-2">
+            <a href="{% url 'teacherprofile'%}" class="card text-white text-center bg-info ">
+                <div class="card-body">
+                    <h5 >Profile</h5>
+                </div>
+            </a>
+        </div>
+        
+    </div>    
+ </div> 
+ </div>      
 
 
-<h3>student dashboard</h3>
 
 
 {% endblock content %}
