@@ -3,6 +3,7 @@
 
 {% block content %}
 
+<h5>edit section</h5>
 
 <div class="container py-5">
         <div class="row justify-content-center align-items-center ">
@@ -11,50 +12,42 @@
                    
               <div class="col-md-12 py-4">
                   <div class="text-center text-info" >
-                      <h4>Add New Question</h4>
+                      <h4> Teacher Edit</h4>
                       
                   </div>
                       <hr class="bg-info">
-                      {% for message in messages %}
-                        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                          {{ message }}
-                        </div>
-                      {% endfor %}
-                           <form action="{% url 'teacheraddquestion'%}" method="POST">   
+                           <form action="{% url 'questionedit' ques.id %}" method="POST">
                             {% csrf_token %}
                             <div class="form-group">
                                 <label> Question </label>
-                                <textarea class="form-control" rows="3" name="aquestion" placeholder="Enter The New Question" Required></textarea>
+                                <textarea class="form-control" rows="3" name="aquestion" Required>{{ques.question}}</textarea>
                             </div>
                             <div class="form-group">
                               <label >Mark</label>
-                              <input type="number" class="form-control" name="amark"Required placeholder="Enter the question mark" >
+                              <input type="number" class="form-control" name="amark"Required value="{{ques.marks}}" >
                             </div>
                             <div class="form-group">
                               <label >Option1</label>
-                              <input type="text" class="form-control" name="aoption1" Required placeholder="Enter the option1"  >
+                              <input type="text" class="form-control" name="aoption1" Required value="{{ques.option1}}"  >
                             </div>
                             <div class="form-group">
                               <label >Option2</label>
-                              <input type="text" class="form-control" name="aoption2" Required placeholder="Enter the option2"  >
+                              <input type="text" class="form-control" name="aoption2" Required value="{{ques.option2}}"  >
                             </div>
                             <div class="form-group">
                               <label >Option3</label>
-                              <input type="text" class="form-control" name="aoption3" Required placeholder="Enter the option3"  >
+                              <input type="text" class="form-control" name="aoption3" Required value="{{ques.option3}}"  >
                             </div>
                             <div class="form-group">
                               <label >Option4</label>
-                              <input type="text" class="form-control" name="aoption4" Required placeholder="Enter the option4"  >
+                              <input type="text" class="form-control" name="aoption4" Required value="{{ques.option4}}"  >
                             </div>
                             <div class="form-group">
                               <label >Answer</label>
-                              <input type="text" class="form-control" name="aanswer" Required placeholder="Enter the answer"  >
+                              <input type="text" class="form-control" name="aanswer" Required value="{{ques.answer}}"  >
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Add New Question </button>
+                            <button type="submit" class="btn btn-primary">Update Question</button>
                              
                              
                           </form>
