@@ -49,7 +49,8 @@ def student_result(request):
     return render(request,'Student/studentresult.html',{'res':re})
 
 def student_profile(request):
-    return render(request,'Student/studentprofile.html')
+    p=suser
+    return render(request,'Student/studentprofile.html',{'pr':p})
 
 
 def exam_instruction(request,id):

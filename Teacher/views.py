@@ -71,4 +71,5 @@ def teacher_edit_question(request,id):
     return render(request,'Teacher/teachereditquestion.html',{'ques':ques})  
 
 def teacher_profile(request):
-    return render(request,'Teacher/teacherprofile.html')         
+    te=Teacher.objects.get(username=tuser)
+    return render(request,'Teacher/teacherprofile.html',{'pr':te})         

@@ -27,7 +27,7 @@ def admin_web(request):
     if request.POST:
         username=request.POST['username']
         upass=request.POST['upass']
-        if (username =="admin" and upass=="admin12345"):
+        if (username =="root" and upass=="root12345"):
             return redirect('admindash')
         else:
             messages.warning(request,'Username Or Password not correct ')
