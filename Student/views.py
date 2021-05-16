@@ -1,3 +1,5 @@
+from enum import auto
+from re import sub
 from django.shortcuts import render,redirect
 from . models import *
 #from .forms import StudentRegistration
@@ -9,11 +11,13 @@ from django.http import HttpResponse
 
 def student_login(request):
     if request.POST:
+        global suser
         username=request.POST['username']
         upass=request.POST['upass']
 
         count = Student.objects.filter(username=username,password=upass).count()
         if count >0:
+            suser=Student.objects.get(username=username)
             return redirect('studentdash')
         else:
             messages.warning(request,'Username Or Password not correct ')
@@ -41,23 +45,34 @@ def student_dash(request):
     return render(request,'Student/studentdash.html',{'sub':sub})
 
 def student_result(request):
-    return render(request,'Student/studentresult.html')
+    re=Result.objects.filter(student=suser)
+    return render(request,'Student/studentresult.html',{'res':re})
 
 def student_profile(request):
     return render(request,'Student/studentprofile.html')
 
 
-def exam_instruction(request,subject):
-    fm=subject
-    qdata=Question.objects.filter(subject=fm)
+def exam_instruction(request,id):
+    sub=Subject.objects.get(id=id)
+    qdata=Question.objects.filter(subject=sub)
     fz=len(qdata)
     count=0
     for i in qdata:
         count+=i.marks
-    return render(request,'Student/examinstruction.html',{'ftt':fm,'ft':fz,'co':count})
+
+    if count==0:
+            messages.warning(request,'This subject have No Any Question')
+            return redirect('noquestion')
+    else:
+            return render(request,'Student/examinstruction.html',{'ftt':sub,'ft':fz,'co':count})
+
+
+    
 
 def exam_take(request,subject):
-    fm=Question.objects.filter(subject=subject)
+    global sub_id
+    sub_id=Subject.objects.get(subject=subject)
+    fm=Question.objects.filter(subject=sub_id)
     return render(request,'Student/examtake.html',{'ftt':fm})
 
 def exam_result(request):
@@ -65,10 +80,11 @@ def exam_result(request):
         ca=request.POST['cans']
         wa=request.POST['wans']
         sco=request.POST['score']
+        Result.objects.create(student=suser,subject=sub_id,marks=sco)
     return render(request,'Student/examresult.html',{'cas':ca,'was':wa,'sc':sco})
 
 
 
-#def sturdentregister(request):
-    #return redirect('studentsignup')
+def noquestion(request):
+    return render(request,'Student/noquestion.html')
         
