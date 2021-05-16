@@ -3,6 +3,43 @@
 
 {% block content %}
 
-<h5> student result</h5>
+
+<div class="container py-5">
+<div class="py-3">
+
+
+<div class=" container-fluid">
+<div class="text-center text-warning">
+<h5>Previous Attempt Record</h5>
+<hr class="bg-info">
+</div>
+<table class="table text-center">
+  <thead class="bg-success text-white">
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">Subject</th>
+      <th scope="col">Score Marks</th>
+      <th scope="col">date</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  {% for s in  res %}
+    <tr class="text-primary">
+      <td scope="row">--></td>
+      <td>{{s.subject}}</td>
+      <td>{{s.marks}}</td>
+      <td>{{s.date}}</td>
+      
+      
+    </tr>
+  {% endfor %}
+    
+  </tbody>
+</table>
+
+</div>
+</div> 
+</div>
 
 {% endblock content %}

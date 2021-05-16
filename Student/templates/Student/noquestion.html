@@ -1,0 +1,21 @@
+{% extends 'Student/studentbase.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container py-5">
+                    {% for message in messages %}   
+                        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          {{ message }}
+                        </div>
+                      {% endfor %}
+        <div class="text-center">
+            <a class="btn btn-info" href="{% url 'studentdash'%}">Back to DashBoard</a>
+        </div>
+        
+      </div>
+
+{% endblock content %}
